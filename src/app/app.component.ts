@@ -1,3 +1,6 @@
+import { HistoricalQrCodePage } from './../pages/historical-qr-code/historical-qr-code';
+import { GenerateQrCodePage } from './../pages/generate-qr-code/generate-qr-code';
+import { ReadQrCodePage } from './../pages/read-qr-code/read-qr-code';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -12,7 +15,7 @@ import { ListPage } from '../pages/list/list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = GenerateQrCodePage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -21,8 +24,9 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Generate QR Code', component: GenerateQrCodePage },
+      { title: 'Historical QR Code', component: HistoricalQrCodePage },
+      { title: 'Read QR Code', component : ReadQrCodePage}
     ];
 
   }
