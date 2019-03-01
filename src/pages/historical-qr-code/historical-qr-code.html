@@ -16,4 +16,11 @@
 
 <ion-content padding>
 
+    <ion-list *ngIf="historicQrCode != null">
+        <li *ngFor="let historic of historicQrCode">
+            <p>Texte générer : {{historic.textQrCode}}</p>
+            <p>Créer le : {{historic.createdAt | date:'dd/MM/yy à HH:mm'}}</p>
+        </li>
+      </ion-list>
+
 </ion-content>

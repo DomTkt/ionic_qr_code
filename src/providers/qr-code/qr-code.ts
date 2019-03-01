@@ -16,9 +16,9 @@ export class QrCodeProvider {
   }
 
   generate(text: string): Promise<string> {
-    const qrcodeEncoder = QRCode;
+    const qrCodeEncoder = QRCode;
     return new Promise<string> ((resolve,reject) => {
-      qrcodeEncoder.toDataURL(text, {errorCorrectionLevel : "H"}, function (err,url){
+      qrCodeEncoder.toDataURL(text, {errorCorrectionLevel : "H"}, function (err,url){
         if(err){
           reject(err);
         }else{

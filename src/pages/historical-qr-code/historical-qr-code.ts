@@ -1,3 +1,5 @@
+import { HistoricQrCodeProvider } from './../../providers/historic-qr-code/historic-qr-code';
+import { HistoricQrCode } from './../../app/models/historicQrCode';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -15,11 +17,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class HistoricalQrCodePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  historicQrCode : HistoricQrCode[];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private historicProvider : HistoricQrCodeProvider) {
+
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad HistoricalQrCodePage');
+  ionViewWillEnter(){
+    this.historicProvider.getHistoricStored().then(historic => {
+      this.historicQrCode = historic})
   }
 
 }
